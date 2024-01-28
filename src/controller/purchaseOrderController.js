@@ -74,7 +74,7 @@ export const readAllByBuyer = async (req, res) => {
       include: [
         {
           model: Stocks,
-          as: "orderedFrom",
+          as: "orderedProduct",
           attributes: [
             "id",
             "name",
@@ -86,7 +86,7 @@ export const readAllByBuyer = async (req, res) => {
           include: [
             {
               model: Businesses,
-              as: "stockOwner",
+              as: "businessOfferingIt",
               include: [
                 {
                   model: Users,
@@ -107,7 +107,7 @@ export const readAllByBuyer = async (req, res) => {
         },
         {
           model: Users,
-          as: "orderedBy",
+          as: "businessOrderedIt",
           where: {
             id: loggedUser,
           },
@@ -151,7 +151,7 @@ export const reagSingleOrder = async (req, res) => {
       include: [
         {
           model: Stocks,
-          as: "orderedFrom",
+          as: "orderedProduct",
           attributes: [
             "id",
             "name",
@@ -163,7 +163,7 @@ export const reagSingleOrder = async (req, res) => {
           include: [
             {
               model: Businesses,
-              as: "stockOwner",
+              as: "businessOfferingIt",
               include: [
                 {
                   model: Users,
@@ -183,7 +183,7 @@ export const reagSingleOrder = async (req, res) => {
         },
         {
           model: Users,
-          as: "orderedBy",
+          as: "businessOrderedIt",
           attributes: [
             "firstName",
             "lastName",
@@ -229,7 +229,7 @@ export const readAllBySeller = async (req, res) => {
       include: [
         {
           model: Stocks,
-          as: "orderedFrom",
+          as: "orderedProduct",
           attributes: [
             "id",
             "name",
@@ -241,7 +241,7 @@ export const readAllBySeller = async (req, res) => {
           include: [
             {
               model: Businesses,
-              as: "stockOwner",
+              as: "businessOfferingIt",
               attributes: [
                 "id",
                 "name",
@@ -273,7 +273,7 @@ export const readAllBySeller = async (req, res) => {
         },
         {
           model: Users,
-          as: "orderedBy",
+          as: "businessOrderedIt",
           attributes: [
             "firstName",
             "lastName",

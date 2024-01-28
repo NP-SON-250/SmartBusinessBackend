@@ -76,7 +76,7 @@ export const readAllByOwner = async (req, res) => {
       include: [
         {
           model: Businesses,
-          as: "stockOwner",
+          as: "businessOfferingIt",
           attributes: [
             "id",
             "name",
@@ -133,7 +133,7 @@ export const readAll = async (req, res) => {
       include: [
         {
           model: Businesses,
-          as: "stockOwner",
+          as: "businessOfferingIt",
           attributes: [
             "id",
             "name",
@@ -188,7 +188,7 @@ export const readSingle = async (req, res) => {
       include: [
         {
           model: Businesses,
-          as: "stockOwner",
+          as: "businessOfferingIt",
           attributes: [
             "id",
             "name",

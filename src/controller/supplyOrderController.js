@@ -78,7 +78,7 @@ export const readAllBySeller = async (req, res) => {
       include: [
         {
           model: Stocks,
-          as: "orderedFrom",
+          as: "orderedProduct",
           attributes: [
             "id",
             "name",
@@ -90,7 +90,7 @@ export const readAllBySeller = async (req, res) => {
           include: [
             {
               model: Businesses,
-              as: "stockOwner",
+              as: "businessOfferingIt",
               attributes: [
                 "id",
                 "name",
@@ -120,7 +120,7 @@ export const readAllBySeller = async (req, res) => {
 
         {
           model: Businesses,
-          as: "orderedBy",
+          as: "businessOrderedIt",
           where: {
             userId: loggedUser,
           },
@@ -155,7 +155,7 @@ export const reagSingleOrder = async (req, res) => {
       include: [
         {
           model: Stocks,
-          as: "orderedFrom",
+          as: "orderedProduct",
           attributes: [
             "id",
             "name",
@@ -167,11 +167,11 @@ export const reagSingleOrder = async (req, res) => {
           include: [
             {
               model: Businesses,
-              as: "stockOwner",
+              as: "businessOfferingIt",
               include: [
                 {
                   model: Users,
-                  as: "orderedBy",
+                  as: "businessOrderedIt",
                   attributes: [
                     "firstName",
                     "lastName",
@@ -235,7 +235,7 @@ export const readAllBySupplier = async (req, res) => {
       include: [
         {
           model: Stocks,
-          as: "orderedFrom",
+          as: "orderedProduct",
           attributes: [
             "id",
             "name",
@@ -247,7 +247,7 @@ export const readAllBySupplier = async (req, res) => {
           include: [
             {
               model: Businesses,
-              as: "stockOwner",
+              as: "businessOfferingIt",
               attributes: [
                 "id",
                 "name",

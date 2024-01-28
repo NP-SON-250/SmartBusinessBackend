@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       PurchaseOrders.belongsTo(models.Stocks, {
         foreignKey: "stockId",
-				as: "orderedFrom"
+        as: "orderedProduct",
       });
       PurchaseOrders.belongsTo(models.Users, {
         foreignKey: "buyerId",
-				as: "orderedBy"
+        as: "businessOrderedIt",
       });
       PurchaseOrders.hasMany(models.Sales, {
         foreignKey: "orderId",
